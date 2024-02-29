@@ -38,7 +38,6 @@ public class UserServiceImpl implements UserService {
         }
         users = map;
         return users.size() + "개 더미값 추가";
-
     }
 
     @Override
@@ -50,8 +49,8 @@ public class UserServiceImpl implements UserService {
     @Override
     public String login(UserDTO user) {
         String msg = "";
-        UserDTO userInMap = users.get(user.getUsername());
-        if (userInMap == null) {
+        UserDTO userInMap = users.get(user.getUsername()); //userInMap: 본체 / users: Entry / user.getPassword(): 파라미터
+        if (userInMap == null) { //null:자연어 but 기계어의 어떤 수가 할당됨. -> ==는 수를 비교하는 기호
             msg = "아이디가 일치하지 않습니다.";
         } else if (userInMap.getPassword().equals(user.getPassword())){
             msg = "로그인 성공";
@@ -80,6 +79,7 @@ public class UserServiceImpl implements UserService {
     public List<UserDTO> getUserList() {
         return null;
     }
+    //Collection > 받는 놈이 리스트면 리스트 셋이면 셋
 
     @Override
     public List<UserDTO> findUsersByName(String name) {

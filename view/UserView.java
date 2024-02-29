@@ -5,7 +5,9 @@ import model.UserDTO;
 
 import java.util.Map;
 import java.util.Scanner;
-
+//결과를 보여주는
+//sout이 안에 있는지 밖에 있는지
+//중요한건 서비스 안에 잇는 리턴타입
 public class UserView {
     public static void main( Scanner sc) {
         UserController userController = new UserController();
